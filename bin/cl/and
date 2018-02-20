@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+form="$1"
+shift
+more="$@"
+
+if [ -z "$form" ]; then false; else
+    echo "if [ -z \"\$( $form )\" ]; then false; else"
+    if [ -z "$more" ]; then echo "    echo t"; else
+        and $more
+    fi
+    echo "fi"
+fi

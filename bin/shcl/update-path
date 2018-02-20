@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+packages="$("${SHCL_BIN}/shcl/packages")"
+
+echo -n "SHCL_PATH=\""
+for pkg in ${packages}; do
+    echo -n "\${SHCL_BIN}/${pkg}:"
+done
+echo "\${SHCL_BIN}\""
+echo 'PATH="${SHCL_PATH}:${SHCL_OLD_PATH}"'
+echo 'export SHCL_PATH PATH'

@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+package="$1"
+
+if [ -z "$("${SHCL_BIN}/cl/find-package" "$package")" ]; then
+    "${SHCL_BIN}/cl/error" "package not found: \"$package\""
+else
+    shcl__cl__package="$package"
+    export shcl__cl__package
+    "${SHCL_BIN}/shcl/update-path"
+    echo "echo '\"${package}\"'"
+fi

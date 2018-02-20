@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+form1="$1"
+form2="$2"
+
+echo "if [ \"\$( $form1 )\" = \"\$( $form2 )\" ]; then"
+echo "    echo t"
+echo "else"
+echo "    false"
+echo "fi"

@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+form="$1"
+
+echo "if [ \"\$( $form )\" = '' ]; then"
+echo "    echo t"
+echo "else"
+echo "    false"
+echo "fi"

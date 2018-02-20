@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+
+pred="$1"
+form="$2"
+shift 2
+
+echo "if [ -z \"\$( $pred )\" ]; then"
+if [ $# -gt 0 ]; then
+    cond "$@"
+else
+    echo "    false"
+fi
+echo "else"
+echo "    eval \"\$( $form )\""
+echo "fi"

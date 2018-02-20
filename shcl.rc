@@ -1,0 +1,8 @@
+#!/bin/sh
+SHCL_DIR="$(cd "$(dirname "$0")" && pwd)"
+SHCL_BIN="${SHCL_DIR}/bin"
+if [ -z "$SHCL_OLD_PATH" ]; then
+	SHCL_OLD_PATH="$PATH"
+fi
+export SHCL_BIN SHCL_DIR SHCL_OLD_PATH SHCL_PATH
+eval "$("${SHCL_BIN}/cl/in-package" cl-user)"

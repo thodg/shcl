@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+package="$1"
+
+if [ -n "$package" ] && [ -d "${SHCL_BIN}/$package" ]; then
+    echo "\"$package\""
+else
+    false
+fi

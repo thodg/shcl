@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+echo "${shcl__cl__package}"
+echo "${shcl__cl__use_package}" | while read user pkg; do
+    if [ "${shcl__cl__package}" = "$user" ]; then
+        echo "$pkg"
+    fi
+done

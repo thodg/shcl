@@ -1,0 +1,5 @@
+#!/bin/sh
+set -e
+
+"${SHCL_BIN}/cl/in-package" cl-user
+"${SHCL_BIN}/cl/use-package" cl
